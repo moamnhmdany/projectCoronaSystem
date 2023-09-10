@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.mui-textfield.mui-textfield--float-label > label {-webkit-transition:all .15s ease-out;-moz-transition:all .15s ease-out;-o-transition:all .15s ease-out;transition:all .15s ease-out;}</style><style type="text/css">@keyframes mui-btn-inserted{from{transform:none;}to{transform:none;}}.mui-btn{animation-duration:0.0001s;animation-name:mui-btn-inserted;}@keyframes mui-dropdown-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-dropdown-inserted;}@keyframes mui-btn-inserted,mui-dropdown-inserted{from{transform:none;}to{transform:none;}}.mui-btn[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-btn-inserted,mui-dropdown-inserted;}@keyframes mui-tab-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="tab"]{animation-duration:0.0001s;animation-name:mui-tab-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > input{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > textarea{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-select-inserted{from{transform:none;}to{transform:none;}}.mui-select > select{animation-duration:0.0001s;animation-name:mui-select-inserted;}@keyframes mui-node-inserted{from{transform:none;}to{transform:none;}}.mui-select > select ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-inserted;}@keyframes mui-node-disabled{from{transform:none;}to{transform:none;}}.mui-select > select:disabled ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-disabled;}</style>
+<title>Swing Examples - Using JEditorPane to display an HTML page</title>
+<meta charset="utf-8">
+<meta name="description" content="Swing Examples - Using JEditorPane to display an HTML page,  Following example showcase how to display a HTML content of a HTML file in swing based application.">
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code">
+<link rel="canonical" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/using_jeditorpane_to_show_html_006.html">
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/style-min-v1.css">
+<script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/rules-p-54Nt-1NAaEEe0.js" async=""></script><script type="text/javascript" async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/analytics.js"></script><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/js"></script><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/prism-core.js"></script>
+<script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/prism-autoloader.js"></script>
+<script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/script-min-v1.js"></script><link rel="stylesheet" type="text/css" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/prettify.css">
+<script>
+function printPage() { window.print(); }
+function readCookie(name) {
+     var nameEQ = name + "=";
+     var ca = document.cookie.split(';');
+     for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+     }
+     return null;
+}
+</script>
+<script id="adp1" data-cfasync="false">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/adpushup.js" type="text/javascript" async=""></script>
+<script id="adp2" data-cfasync="false">(function(w, d) {var cval = readCookie('subscription_purchased');if(cval == '1'){ return; } var s = d.createElement('script'); s.src = '//delivery.adrecover.com/18107/adRecover.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/adRecover.js" type="text/javascript" async=""></script>
+<style>
+.butnn-save a{color:#fff;} .notes_msg{color:green; margin-left:20px; margin-top:15px;}
+.right-menu .mui-btn {
+    background-color:#ce5188;
+}
+a.demo {
+    background:#ce5188;
+}
+li.heading {
+    background:#ce5188;
+}
+.course-box{background:#ce5188}
+.home-intro-sub p{color:#ce5188}
+a.demo{
+   top: 12px;
+   float:right;
+}
+.prettyprint{
+   width: 99%;
+}
+.site-message img {
+   width:100%;
+}
+@media (max-width:544px){
+   .site-message img {
+       width: 200%;
+       position: relative;
+       left: -50%;
+   }
+}
+</style>
+<script type="text/javascript" async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/jquery-2.js"></script><script type="text/javascript" async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/pb.js"></script><script type="text/javascript" async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/quantcast.js"></script><script type="text/javascript">// refreshTypes: {
+//     1: "Active View", -> this is default
+//     2: "Active Tab",
+//     3: "BG"
+// }
+!(function () {
+	var REFRESH_COUNTRY_MAP = {
+		US: {
+			//This is the country code where the given refesh is supposed to be applicable. To make it applicable across all countries use "default" in place of country code
+			refreshInterval: 60, // this is in seconds
+			refreshType: 3,
+			sectionIdsToRefresh: [] //in case sectionIdsToRefresh list is empty it will be applicable on units/sections
+		},
+		GB: {
+			//This is the country code where the given refesh is supposed to be applicable. To make it applicable across all countries use "default" in place of country code
+			refreshInterval: 75, // this is in seconds
+			refreshType: 3,
+			sectionIdsToRefresh: [] //in case sectionIdsToRefresh list is empty it will be applicable on units/sections
+		},
+		CA: {
+			//This is the country code where the given refesh is supposed to be applicable. To make it applicable across all countries use "default" in place of country code
+			refreshInterval: 75, // this is in seconds
+			refreshType: 3,
+			sectionIdsToRefresh: [] //in case sectionIdsToRefresh list is empty it will be applicable on units/sections
+		},
+FR: {
+			//This is the country code where the given refesh is supposed to be applicable. To make it applicable across all countries use "default" in place of country code
+			refreshInterval: 75, // this is in seconds
+			refreshType: 3,
+			sectionIdsToRefresh: [] //in case sectionIdsToRefresh list is empty it will be applicable on units/sections
+		},
+DE: {
+			//This is the country code where the given refesh is supposed to be applicable. To make it applicable across all countries use "default" in place of country code
+			refreshInterval: 75, // this is in seconds
+			refreshType: 3,
+			sectionIdsToRefresh: [] //in case sectionIdsToRefresh list is empty it will be applicable on units/sections
+		},
+		default: {
+			refreshInterval: 30,
+			refreshType: 1,
+			sectionIdsToRefresh: []
+		}
+	};
+	var adpushup = window.adpushup || {};
+	adpushup.que = window.adpushup.que || [];
+	adpushup.que.push(function () {
+		var customRefreshConfig =
+			REFRESH_COUNTRY_MAP[adpushup.config.country] || REFRESH_COUNTRY_MAP['default'];
+		customRefreshConfig.refreshType =
+			customRefreshConfig.refreshType || REFRESH_COUNTRY_MAP['default'].refreshType;
+		customRefreshConfig.refreshInterval =
+			customRefreshConfig.refreshInterval || REFRESH_COUNTRY_MAP['default'].refreshInterval;
+		if (window.location.search.indexOf('apDebug=true') !== -1) {
+			window.currentRefreshConfig = customRefreshConfig;
+			window.REFRESH_COUNTRY_MAP = REFRESH_COUNTRY_MAP;
+		}
+		var isUnitToBeRefreshed = function (sectionId, sectionIdsToRefresh) {
+			return !sectionIdsToRefresh.length || sectionIdsToRefresh.indexOf(sectionId) !== -1;
+		};
+		var setupRefreshIntervalTimeForUnits = function (customRefreshConfig) {
+			// Handle refreshInterval Innovative ads
+			adpushup.config.innovativeAds.forEach(function (ad) {
+				if (
+					ad.networkData.refreshSlot &&
+					isUnitToBeRefreshed(ad.id, customRefreshConfig.sectionIdsToRefresh)
+				) {
+					ad.networkData.refreshInterval = customRefreshConfig.refreshInterval;
+				}
+			});
+			// Handle refreshInterval Manual Ads
+			adpushup.config.manualAds.forEach(function (ad, i) {
+				if (
+					ad.networkData.refreshSlot &&
+					isUnitToBeRefreshed(ad.id, customRefreshConfig.sectionIdsToRefresh)
+				) {
+					ad.networkData.refreshInterval = customRefreshConfig.refreshInterval;
+				}
+			});
+			//Handle refreshInterval Layout Ads
+			var platform = adpushup.config.platform;
+			var experiment = adpushup.config.experiment;
+			if (experiment[platform]) {
+				for (var page_group in experiment[platform]) {
+					experiment[platform][page_group].variations.forEach(function (variation, j) {
+						variation.ads.forEach(function (ad) {
+							if (
+								ad.networkData.refreshSlot &&
+								isUnitToBeRefreshed(ad.id, customRefreshConfig.sectionIdsToRefresh)
+							) {
+								ad.networkData.refreshInterval = customRefreshConfig.refreshInterval;
+							}
+						});
+					});
+				}
+			}
+		};
+		var setupUtilsCheckElementInViewPercentFn = function (customRefreshConfig) {
+			var utils = window.adpushup.utils;
+			var originalCheckElementInViewPercent = utils.checkElementInViewPercent.bind(utils);
+			//overwrite the function
+			window.adpushup.utils.checkElementInViewPercent = function (el) {
+				var $el = window.adpushup.$(el);
+				var elementOrigId = !!$el.data() ? $el.data().origId : '';
+				if (
+					elementOrigId &&
+					isUnitToBeRefreshed(elementOrigId, customRefreshConfig.sectionIdsToRefresh)
+				) {
+					switch (customRefreshConfig.refreshType) {
+						case 1:
+							utils.log(`ActiveView Refresh for ${elementOrigId}`);
+							return originalCheckElementInViewPercent(el);
+						case 2:
+							utils.log(`ActiveTab refresh for ${elementOrigId}`);
+							if (document.hasFocus()) {
+								return true;
+							}
+						case 3:
+							utils.log(`BG refresh for ${elementOrigId}`);
+							return true;
+					}
+				} else {
+					utils.log(`ActiveView refresh for ${elementOrigId}`);
+					return originalCheckElementInViewPercent(el);
+				}
+			};
+		};
+		if (customRefreshConfig && customRefreshConfig.sectionIdsToRefresh) {
+			setupRefreshIntervalTimeForUnits(customRefreshConfig);
+			setupUtilsCheckElementInViewPercentFn(customRefreshConfig);
+		}
+	});
+})();
+
+!(function () {
+	window._apPbJs = window._apPbJs || {};
+	window._apPbJs.que = window._apPbJs.que || [];
+	var enabledBidders = adpushup.utils.getQueryParams().enabledBidders;
+	if (enabledBidders) {
+		enabledBiddersArray = enabledBidders.split(',');
+		window.adpushup.utils.log(enabledBiddersArray);
+		window._apPbJs.que.push(function () {
+			window._apPbJs.onEvent('beforeRequestBids', function (adunits) {
+				var filteredAdUnits = [];
+				for (var i = 0; i < adunits.length; i++) {
+					var bidders = [];
+					var adUnit = adunits[i];
+					var adUnitBids = adUnit.bids;
+					for (var j = 0; j < adUnitBids.length; j++) {
+						if (enabledBiddersArray.indexOf(adUnitBids[j].bidder) !== -1) {
+							bidders.push(adUnitBids[j]);
+						}
+					}
+					adUnit.bids = bidders;
+					filteredAdUnits.push(adUnit);
+				}
+				adunits = filteredAdUnits;
+			});
+		});
+	}
+})();
+
+
+/*IL_JOB_STARTS*/
+
+!(function () {
+	//avoid message trigger twice for pnp accounts
+	if (window.IL_MessageTriggered) return;
+	var adpushup = window.adpushup || {};
+	adpushup.que = adpushup.que || [];
+	adpushup.que.push(function () {
+		var w = window;
+		var ap = adpushup;
+		var EU_COUNTRY_LIST = [
+			'AT',
+			'BE',
+			'BG',
+			'HR',
+			'CY',
+			'CZ',
+			'DK',
+			'EE',
+			'FI',
+			'FR',
+			'DE',
+			'GR',
+			'HU',
+			'IE',
+			'IT',
+			'LV',
+			'LT',
+			'LU',
+			'MT',
+			'NL',
+			'PL',
+			'PT',
+			'RO',
+			'SK',
+			'SI',
+			'ES',
+			'SE',
+			'GB',
+			'GF',
+			'GP',
+			'MQ',
+			'ME',
+			'YT',
+			'RE',
+			'MF',
+			'GI',
+			'AX',
+			'PM',
+			'GL',
+			'BL',
+			'SX',
+			'AW',
+			'CW',
+			'WF',
+			'PF',
+			'NC',
+			'TF',
+			'AI',
+			'BM',
+			'IO',
+			'VG',
+			'KY',
+			'FK',
+			'MS',
+			'PN',
+			'SH',
+			'GS',
+			'TC',
+			'AD',
+			'LI',
+			'MC',
+			'SM',
+			'VA',
+			'JE',
+			'GG',
+			'GI'
+		];
+		if (EU_COUNTRY_LIST.includes(ap.config.country)) return;
+		var utils = ap.utils;
+		utils.log('Impression Logging (IL) started.');
+		var impressionLoggingKey = 'IL_';
+		var iframeFound = false;
+		var dataEventName = 'data';
+		var errorEventName = 'error';
+		var cdnorigin_domain = 'https://cdn.adpushup.com';
+		var adpushup_client = 'https://client.adpushup.com';
+		var logging_endpoint = 'https://aplogger.adpushup.com/log';
+		var message = {
+			origin: adpushup_client,
+			userId: ap.config.packetId
+		};
+		function generateUniqueId() {
+			return (
+				'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+					var r = (Math.random() * 16) | 0,
+						v = c == 'x' ? r : (r & 0x3) | 0x8;
+					return v.toString(16);
+				}) +
+				'-' +
+				new Date().valueOf()
+			);
+		}
+		function isParsableJson(str) {
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				return false;
+			}
+			return true;
+		}
+		function triggerRequest(eventName, data) {
+			if (isParsableJson(data)) {
+				var stringJson = data;
+			} else {
+				var stringJson = JSON.stringify(data);
+				//stringifying the error object returns empty object
+				//https://stackoverflow.com/questions/18391212/is-it-not-possible-to-stringify-an-error-using-json-stringify
+				if (stringJson === '{}')
+					stringJson = JSON.stringify(data, Object.getOwnPropertyNames(data));
+			}
+			var encodedStringJson = btoa(stringJson);
+			var pixel = document.createElement('img');
+			pixel.src =
+				logging_endpoint +
+				'?event=' +
+				impressionLoggingKey +
+				eventName +
+				'&data=' +
+				encodedStringJson;
+			utils.log('IL request triggered.' + stringJson);
+		}
+		function checkIframe() {
+			if (w.IL_MessageTriggered) return;
+			utils.log('IL checking if Iframe already exists.');
+			var iframes = document.getElementsByTagName('iframe');
+			for (var i = 0; i < iframes.length; i++) {
+				var ifm = iframes[i];
+				if (ifm.src.includes(cdnorigin_domain)) {
+					var iframe = ifm;
+					iframeFound = true;
+					break;
+				}
+			}
+			if (!iframeFound) return;
+			triggerMessage(iframe);
+		}
+		function createIframe() {
+			utils.log('IL iframe not found. Creating new iframe.');
+			return new Promise(function (resolve, reject) {
+				var ifm = document.createElement('iframe');
+				ifm.src = cdnorigin_domain + '/02/IL_.html';
+				ifm.style.cssText = 'display:none; width:0; height:0;';
+				ifm.onload = function () {
+					resolve(ifm);
+				};
+				ifm.onerror = function () {
+					reject();
+				};
+				(document.body || document.head).appendChild(ifm);
+			});
+		}
+		function generateImpressionLoggingJson(trackerObj) {
+			var uniqueId = generateUniqueId();
+			var adpushup = window.adpushup || {};
+
+			var obj = {
+				country: ap.config.country,
+				date: Date.now(),
+				domain: w.location.hostname,
+				pathname: w.location.pathname,
+				platform: ap.config.platform,
+				siteId: ap.config.siteId,
+				uniqueId: uniqueId,
+				activeEvents: adpushup.activeEvents || '',
+				runningEvents: adpushup.runningEvents || ''
+			};
+			trackerObj = Object.assign(trackerObj, obj);
+			return trackerObj;
+		}
+		function attachListeners() {
+			w.addEventListener('message', function (e) {
+				var origin = cdnorigin_domain;
+				if (e.origin !== origin) return;
+				if (!isParsableJson(e.data)) return;
+				var trackerObj = JSON.parse(e.data);
+				if (!trackerObj) return;
+				if (!trackerObj.userId) trackerObj.userId = ap.config.packetId;
+				utils.log('IL message received from iframe.');
+				if (!!trackerObj['origin']) delete trackerObj['origin'];
+				trackerObj = generateImpressionLoggingJson(trackerObj);
+				triggerRequest(dataEventName, trackerObj);
+			});
+		}
+		function triggerMessage(ifm) {
+			if (w.IL_MessageTriggered) return;
+			w.IL_MessageTriggered = true;
+			utils.log('IL message sent to iframe.');
+			ifm.contentWindow.postMessage(JSON.stringify(message), cdnorigin_domain);
+		}
+		try {
+			attachListeners();
+			checkIframe();
+			if (w.IL_MessageTriggered) return;
+			createIframe()
+				.then(function (ifm) {
+					utils.log('IL iframe created.');
+					triggerMessage(ifm);
+				})
+				.catch(function (error) {
+					if (error === undefined)
+						error = {
+							message:
+								'Custom error message. Error in createIframe(), could be because of promise rejection'
+						};
+					utils.log('IL error in iframe creation.' + error);
+					triggerRequest(errorEventName, error);
+				});
+		} catch (error) {
+			utils.log('IL error in execution.' + error);
+			triggerRequest(errorEventName, error);
+		}
+	});
+})();
+
+/*IL_JOB_ENDS*/
+
+</script><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/gpt.js" async=""></script><script async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/apstag.js"></script><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/pubads_impl_2022012506.js" async=""></script><link rel="preload" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator_002.js" as="script"><script type="text/javascript" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator_002.js"></script><link rel="preload" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator.js" as="script"><script type="text/javascript" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator.js"></script><link rel="preload" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator_002.js" as="script"><script type="text/javascript" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator_002.js"></script><link rel="preload" href="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator.js" as="script"><script type="text/javascript" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/integrator.js"></script></head>
+<body>
+<header id="header" class="fixed">
+<div class="site-message">
+  <a href="https://www.tutorialspoint.com/latest/prime-packs">
+  <img src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/top-banner.jpg" alt="Video Courses Sale">
+  </a>
+</div>
+<!-- pop-up -->
+<!-- pop-up -->
+<div class="pop-modal overlay-pop popdiv" style="display: none;">
+<div class="modal-window small">
+<span class="close" title="close">×</span>
+<div class="pop-content">
+</div>
+<span class="msg"></span>
+</div>
+</div>
+<div class="wrap_loader">
+<div class="imgLoader"></div>
+</div>
+<input type="hidden" id="vu" name="vu" value="">
+<!-- pop-up -->
+
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item articles">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com/" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/market/login.asp?v=4.00" target="_blank" title="Login TutorialsPoint"><i class="fal fa-sign-in-alt"></i> <span>Login</span></a> 
+</div>      
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1 sticky" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="https://www.tutorialspoint.com/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="https://www.tutorialspoint.com/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="https://www.tutorialspoint.com/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="https://www.tutorialspoint.com/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="https://www.tutorialspoint.com/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="https://www.tutorialspoint.com/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="https://www.tutorialspoint.com/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="https://www.tutorialspoint.com/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="https://www.tutorialspoint.com/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="https://www.tutorialspoint.com/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="https://www.tutorialspoint.com/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="https://www.tutorialspoint.com/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="https://www.tutorialspoint.com/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="https://www.tutorialspoint.com/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="https://www.tutorialspoint.com/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="https://www.tutorialspoint.com/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="https://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/index.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box-wrap">
+	<div class="search-box" style="">
+		<div>
+			<input class="input" type="text" id="search-strings" name="key" placeholder="Search latest courses, ebooks and prime packs..." autocomplete="off">
+			<button id="btnSearch"><i class="fa fa-search" title="Search"></i></button>
+		</div>
+	</div>		
+	<div class="search-box" id="search-results" style="display: none;"></div>
+	<div class="clear"></div>
+	<script>
+		$('#search-strings').keyup(function () {
+			var keyword = $('#search-strings').val();
+			if (keyword != "" && keyword.length > 2) {
+				$.ajax({
+					url:"https://search.tutorialspoint.com/market_urls_suggestion.php",
+					method: "POST",
+               type: 'POST',
+					dataType: "json",
+               cache:false,
+					data: {
+						'keyword': keyword
+					},
+					error: function (err) {
+						console.log ( err );
+					},
+					success: function (data) {
+						if (data.length > 0) {
+					//var str = '<div class="search_title arrow_search">Search Results</div><ul>';
+					var str = '<div class="search-overlay"><ul>';
+					data.forEach((item) => {
+					   var iconStr = '<i class="fa fa-play-circle"></i>';
+					   if(item.type=='E'){
+						  iconStr = '<i class="fa fa-file-pdf"></i>';
+					   }
+					   if(item.type=='B'){
+						  iconStr = '<i class="fa fa-cubes"></i>';
+					   }
+					   if(item.type=='A' || item.type=='I' || item.type=='P'){ // profile/author/instructor
+						  iconStr = '<i class="fa fa-user"></i>';
+					   }
+					   str = str + '<a href="'+item.url+'" target="_blank"><li class="clsHeadQuestion">'+iconStr+' '+item.name+'</li></a>'; 
+					});
+					str = str + '</ul><br/></div><div class="clear"></div>';
+							$('#search-results').show();
+							$('#search-results').html(str);
+						} else {
+							$('#search-results').hide();
+							$('#search-results').html('');
+						}
+					}
+				});
+			}else{
+				$('#search-results').hide();
+				$('#search-results').html('');
+			}
+		});
+	 $('#btnSearch').click(function(){
+		   var keyword = $('#search-strings').val();
+		   window.location.href = "https://www.tutorialspoint.com/search/"+keyword;
+	 });
+	 $(document).mouseup(function(e) 
+	 {
+		 var container = $('#search-results');            
+		 if (!container.is(e.target) && container.has(e.target).length === 0) 
+		 {
+			 container.hide();
+		 }
+	 });
+	</script>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fa fa-books"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://www.tutorialspoint.com/latest/ebooks"><i class="fa fa-book-reader"></i> <span>eBooks</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/latest/courses"><i class="fa fa-video"></i> <span>Courses</span></a> 
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/swingexamples-mini-logo.jpg" alt="JAVA Swing Examples">
+</div>
+<ul class="toc chapters">
+<li class="heading">Swing Programming Examples</li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/index.htm">Example - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_environment.htm">Example - Environment Setup</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_borders.htm">Example - Borders</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_buttons.htm">Example - Buttons</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_checkboxes.htm">Example - CheckBoxes</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_comboboxes.htm">Example - Combo Boxes</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_colorchoosers.htm">Example - Color Choosers</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_dialogs.htm">Example - Dialogs</a></li>
+<li style="background-color: rgb(214, 214, 214);"><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_editorpanes.htm">Example - Editor Panes</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_filechoosers.htm">Example - File Choosers</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_formatted_textfields.htm">Example - Formatted TextFields</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_frames.htm">Example - Frames</a></li>
+<!--<li><a href="/swingexamples/swingexamples_icons.htm">Example - Icons</a></li>-->
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_lists.htm">Example - Lists</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_layouts.htm">Example - Layouts</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_menus.htm">Example - Menus</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_password_fields.htm">Example - Password Fields</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_progress_bars.htm">Example - Progress Bars</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_scroll_panes.htm">Example - Scroll Panes</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_sliders.htm">Example - Sliders</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_spinners.htm">Example - Spinners</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_tables.htm">Example - Tables</a></li>
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_toolbars.htm">Example - Toolbars</a></li>
+<!--<li><a href="/swingexamples/swingexamples_tooltips.htm">Example - Tooltips</a></li>-->
+<li><a href="https://www.tutorialspoint.com/swingexamples/swingexamples_tree.htm">Example - Tree</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Swing Useful Resources</li>
+<li><a href="https://www.tutorialspoint.com/swing/swing_quick_guide.htm">Swing - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/swing/swing_useful_resources.htm">Swing - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/swing/swing_discussion.htm">Swing - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div id="stickyparent" style="position: sticky;">
+<div style="height: 250px; width: 300px; position: fixed; top: 80px;" id="sticky-ad">
+<div id="00000001-97d2ec16-41b4-4b6b-b5ec-35b09643c405" class="_ap_apex_ad" data-section="00000001-97d2ec16-41b4-4b6b-b5ec-35b09643c405" data-orig-id="430c9911-782f-495d-88f9-69f58ca8c9a4" data-render-time="1643535693862" style="text-align: center; margin: 10px auto; width: 300px; height: 250px; overflow: hidden; display: block;" data-ap-network="adpTags" data-refresh-time="1643536049156" data-timeout="702">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("430c9911-782f-495d-88f9-69f58ca8c9a4");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-97d2ec16-41b4-4b6b-b5ec-35b09643c405" style="text-align: center; margin: 0 auto;" data-google-query-id="COX-xfSY2fUCFYbWdwoddT0P6A">
+
+<div id="google_ads_iframe_/103512698,60931893/21875371528_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/21875371528_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/21875371528_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="1" width="300" height="250" frameborder="0"></iframe></div></div></div>
+</div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>Swing Examples - Using JEditorPane to display an HTML page</h1>
+<hr>
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"><div id="00000001-2048284f-72f8-4224-b635-18f89b444c4c" class="_ap_apex_ad" data-section="00000001-2048284f-72f8-4224-b635-18f89b444c4c" data-orig-id="2d1bb2c4-eb72-471d-9c80-1bf5514728c1" data-render-time="1643535693869" style="text-align: center; margin: 10px auto; width: 650px; height: 150px; overflow: hidden; display: block;" data-ap-network="adpTags" data-refresh-time="1643535693870" data-timeout="15"><div id="ADP_40046_650x150_00000001-2048284f-72f8-4224-b635-18f89b444c4c" style="text-align: center; margin: 0 auto;" data-google-query-id="CPL0kMyX2fUCFcPvdwodBpoHlA">
+
+<div id="google_ads_iframe_/103512698,60931893/ADP_40046_650X150_2d1bb2c4-eb72-471d-9c80-1bf5514728c1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/ADP_40046_650X150_2d1bb2c4-eb72-471d-9c80-1bf5514728c1_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/ADP_40046_650X150_2d1bb2c4-eb72-471d-9c80-1bf5514728c1_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="2" data-load-complete="true" width="650" height="150" frameborder="0"></iframe></div></div></div></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/swingexamples/swingexamples_editorpanes.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/swingexamples/swingexamples_editorpanes.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>Following example showcase how to display a HTML content of a HTML file in swing based application.</p>
+<p>We are using the following APIs.</p>
+<ul class="list">
+<li><p><b>JEditorPane</b> − To create a editor box to display an HTML content.</p></li>
+<li><p><b>jEditorPane.setPage(URL url)</b> − To get HTML from a url passed and display.</p></li>
+</ul>
+<h2>Example</h2>
+<p>Let create a html file <b>test.htm</b> in the current directory where SwingTester.java is present.</p>
+<h3>test.htm</h3>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="tag">&lt;html&gt;</span><span class="pln">
+   </span><span class="tag">&lt;head&gt;</span><span class="pln">
+      </span><span class="tag">&lt;title&gt;</span><span class="pln">Swing Tester</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+   </span><span class="tag">&lt;body&gt;</span><span class="pln">
+      </span><span class="tag">&lt;p&gt;</span><span class="pln">Swing API is a set of extensible GUI Components 
+         to ease the developer's life to create JAVA based Front End/GUI
+         Applications. It is build on top of AWT API and acts as a replacement of 
+         AWT API, since it has almost every control corresponding to AWT controls.
+         Swing component follows a Model-View-Controller architecture to 
+         fulfill the following criterias.</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+      </span><span class="tag">&lt;ul&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">A single API is to be sufficient to support multiple look and feel.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">API is to be model driven so that the highest level API is not required to have data.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">API is to use the Java Bean model so that Builder Tools and IDE can provide better services to the developers for use.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+      </span><span class="tag">&lt;h2&gt;</span><span class="pln">MVC Architecture</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+      </span><span class="tag">&lt;p&gt;</span><span class="pln">Swing API architecture follows loosely based MVC architecture in the following manner.</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+      </span><span class="tag">&lt;ul&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">Model represents component's data.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">View represents visual representation of the component's data.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">Controller takes the input from the user on the view and reflects the changes in Component's data.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;</span><span class="pln">Swing component has Model as a seperate element, while the View and Controller part are clubbed in the User Interface elements. Because of which, Swing has a pluggable look-and-feel architecture.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+      </span><span class="tag">&lt;h2&gt;</span><span class="pln">Swing Features</span><span class="tag">&lt;/h2&gt;</span><span class="pln">
+      </span><span class="tag">&lt;ul&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;&lt;b&gt;</span><span class="pln">Light Weight</span><span class="tag">&lt;/b&gt;</span><span class="pln"> − Swing components are independent of native Operating System's API as Swing API controls are rendered mostly using pure JAVA code instead of underlying operating system calls.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;&lt;b&gt;</span><span class="pln">Rich Controls</span><span class="tag">&lt;/b&gt;</span><span class="pln"> − Swing provides a rich set of advanced controls like Tree, TabbedPane, slider, colorpicker, and table controls.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;&lt;b&gt;</span><span class="pln">Highly Customizable</span><span class="tag">&lt;/b&gt;</span><span class="pln"> − Swing controls can be customized in a very easy way as visual apperance is independent of internal representation.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+         </span><span class="tag">&lt;li&gt;&lt;p&gt;&lt;b&gt;</span><span class="pln">Pluggable look-and-feel</span><span class="tag">&lt;/b&gt;</span><span class="pln"> − SWING based GUI Application look and feel can be changed at run-time, based on available values.</span><span class="tag">&lt;/p&gt;&lt;/li&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/ul&gt;</span><span class="pln">
+   </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></pre>
+<h3>SwingTester.htm</h3>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="typ">BorderLayout</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="typ">Dimension</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="typ">FlowLayout</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">awt</span><span class="pun">.</span><span class="typ">LayoutManager</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">io</span><span class="pun">.</span><span class="typ">IOException</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">net</span><span class="pun">.</span><span class="pln">URL</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">JEditorPane</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">JFrame</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">JPanel</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">swing</span><span class="pun">.</span><span class="typ">JScrollPane</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SwingTester</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      createWindow</span><span class="pun">();</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> createWindow</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">    
+      </span><span class="typ">JFrame</span><span class="pln"> frame </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pun">(</span><span class="str">"Swing Tester"</span><span class="pun">);</span><span class="pln">
+      frame</span><span class="pun">.</span><span class="pln">setDefaultCloseOperation</span><span class="pun">(</span><span class="typ">JFrame</span><span class="pun">.</span><span class="pln">EXIT_ON_CLOSE</span><span class="pun">);</span><span class="pln">
+      createUI</span><span class="pun">(</span><span class="pln">frame</span><span class="pun">);</span><span class="pln">
+      frame</span><span class="pun">.</span><span class="pln">setSize</span><span class="pun">(</span><span class="lit">560</span><span class="pun">,</span><span class="pln"> </span><span class="lit">450</span><span class="pun">);</span><span class="pln">      
+      frame</span><span class="pun">.</span><span class="pln">setLocationRelativeTo</span><span class="pun">(</span><span class="kwd">null</span><span class="pun">);</span><span class="pln">  
+      frame</span><span class="pun">.</span><span class="pln">setVisible</span><span class="pun">(</span><span class="kwd">true</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+
+   </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> createUI</span><span class="pun">(</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">JFrame</span><span class="pln"> frame</span><span class="pun">){</span><span class="pln">  
+      </span><span class="typ">JPanel</span><span class="pln"> panel </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JPanel</span><span class="pun">();</span><span class="pln">
+      </span><span class="typ">LayoutManager</span><span class="pln"> layout </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">FlowLayout</span><span class="pun">();</span><span class="pln">  
+      panel</span><span class="pun">.</span><span class="pln">setLayout</span><span class="pun">(</span><span class="pln">layout</span><span class="pun">);</span><span class="pln">       
+
+      </span><span class="typ">JEditorPane</span><span class="pln"> jEditorPane </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JEditorPane</span><span class="pun">();</span><span class="pln">
+      jEditorPane</span><span class="pun">.</span><span class="pln">setEditable</span><span class="pun">(</span><span class="kwd">false</span><span class="pun">);</span><span class="pln">   
+      URL url</span><span class="pun">=</span><span class="pln"> </span><span class="typ">SwingTester</span><span class="pun">.</span><span class="kwd">class</span><span class="pun">.</span><span class="pln">getResource</span><span class="pun">(</span><span class="str">"test.htm"</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="kwd">try</span><span class="pln"> </span><span class="pun">{</span><span class="pln">   
+         jEditorPane</span><span class="pun">.</span><span class="pln">setPage</span><span class="pun">(</span><span class="pln">url</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">catch</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IOException</span><span class="pln"> e</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+         jEditorPane</span><span class="pun">.</span><span class="pln">setContentType</span><span class="pun">(</span><span class="str">"text/html"</span><span class="pun">);</span><span class="pln">
+         jEditorPane</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"&lt;html&gt;Page not found.&lt;/html&gt;"</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+
+      </span><span class="typ">JScrollPane</span><span class="pln"> jScrollPane </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">JScrollPane</span><span class="pun">(</span><span class="pln">jEditorPane</span><span class="pun">);</span><span class="pln">
+      jScrollPane</span><span class="pun">.</span><span class="pln">setPreferredSize</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Dimension</span><span class="pun">(</span><span class="lit">540</span><span class="pun">,</span><span class="lit">400</span><span class="pun">));</span><span class="pln">      
+
+      panel</span><span class="pun">.</span><span class="kwd">add</span><span class="pun">(</span><span class="pln">jScrollPane</span><span class="pun">);</span><span class="pln">
+      frame</span><span class="pun">.</span><span class="pln">getContentPane</span><span class="pun">().</span><span class="kwd">add</span><span class="pun">(</span><span class="pln">panel</span><span class="pun">,</span><span class="pln"> </span><span class="typ">BorderLayout</span><span class="pun">.</span><span class="pln">CENTER</span><span class="pun">);</span><span class="pln">    
+   </span><span class="pun">}</span><span class="pln">  
+</span><span class="pun">}</span><span class="pln"> </span></pre>
+<h2>Output</h2>
+<img src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/using_jeditorpane_to_show_html.jpg" alt="Show HTML using html file">
+<div class="parent-file">swingexamples_editorpanes.htm</div>
+<div id="load">
+	<div class="mui-col-md-12 mui-col-sm-12 np">
+		<div class="row uk-min-height" id="ebooks_grid">
+			
+
+			<div class="clear"></div>
+			
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/swingexamples/swingexamples_editorpanes.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/swingexamples/swingexamples_editorpanes.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:20px;"></div>
+<div class="google-bottom-ads" id="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="adp_bottom_ads"><div id="00000001-b276fe92-3702-4384-83ca-a595691faba0" class="_ap_apex_ad" data-section="00000001-b276fe92-3702-4384-83ca-a595691faba0" data-orig-id="4951d1d6-24d4-4a31-afb7-2c22c489eae1" data-render-time="1643535693873" style="text-align: center; margin: 0px auto; display: block;" data-ap-network="adpTags"><div id="ADP_40046_responsivexresponsive_00000001-b276fe92-3702-4384-83ca-a595691faba0" style="text-align: center; margin: 0 auto;" data-google-query-id="CPP0kMyX2fUCFcPvdwodBpoHlA">
+
+<div id="google_ads_iframe_/103512698,60931893/22614721936_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/22614721936_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/22614721936_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="3" data-load-complete="true" width="642" height="400" frameborder="0"></iframe></div></div></div></div>
+<script>
+var adPos = document.getElementById('adp_bottom_ads');
+var mobile_ad_id = "a8a632a6-046e-4f5c-b25f-8bc82ac89fb2";
+var desktop_ad_id = "e7ddd6f7-1ab0-494a-bade-887daa4373a0";
+desktop_ad_id = "4951d1d6-24d4-4a31-afb7-2c22c489eae1";
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+adpushup.triggerAd(ad_id);
+});
+</script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads" id="chapter-menu" style="display: none;">
+<!--
+<input type="hidden" id="vu" name="vu" value=""/>
+-->
+<div class="space-top"></div>
+<div class="mui-panel">
+<ul class="paid-menu" id="div-right-menu">
+<li><a class="hide-on-mobile" href="javascript:printPage();" title="Print this page"><i class="fa fa-print"></i> Print</a></li>
+<li><a href="javascript:void(0)" class="add_notes" title="Add Custom Notes" onclick="add_notes();"><i class="fa fa-edit"></i>&nbsp;Add Notes</a></li>
+<li><a href="javascript:void(0)" class="clsPage text-bookmark" id="text-bookmark" title="Add Bookmark" onclick="text_bookmark()"><i class="fal fa-bookmark"></i>&nbsp;Bookmark this page </a></li>
+<li><a href="javascript:void(0);" id="report_error_popup" onclick="report_error_popup();" title="Report Error"><i class="fal fa-bell"></i>&nbsp;Report Error</a></li>
+<li><a href="javascript:void(0);" id="suggestion_popup" title="Give Suggestions" onclick="suggestion_popup();"><i class="fal fa-badge-check"></i>&nbsp;Suggestions</a></li>
+</ul>
+<br>
+<div class="error_msg display_msg" style="color:red;text-align:left;"></div>
+<div class="success_msg display_msg" style="color:green;text-align:left;"></div>
+<div class="profile-my-notes" id="text_notes_div" style="display:none;">
+<textarea rows="10" class="text_notes" id="text_notes" name="text_notes" placeholder="Enter your custom notes..."></textarea>
+<br>
+<a href="javascript:void(0);" id="submit_text_notes" class="butn-save" onclick="submit_text_notes();"> Save</a>
+<a href="javascript:void(0);" class="pop-no butn-cancel" onclick="notesClose();"> Close</a>
+<p class="notes_msg"></p>
+</div>
+<div class="bottom-menu">
+<div class="tp-btn" style="width: auto;"><i class="fal fa-box-up"></i> <a href="https://www.tutorialspoint.com/market/student/dashboard.jsp">Dashboard</a></div>
+<div class="tp-btn" style="width: auto;" id="btnLogout"><i class="fal fa-sign-out-alt"></i><a href="javascript:void(0)">Logout</a></div>
+</div>
+</div>
+</div>
+<div class="mui-col-md-2 google-right-ads" id="google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" style="margin: 0px auto !important;margin-top:5px;min-height:250px!important">
+<div id="00000001-212edfaf-9d6f-4309-a977-e3f379205bcf" class="_ap_apex_ad" data-section="00000001-212edfaf-9d6f-4309-a977-e3f379205bcf" data-orig-id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" data-render-time="1643535693876" style="text-align: center; margin: 10px auto; width: 300px; height: 250px; overflow: hidden; display: block;" data-ap-network="adpTags" data-refresh-time="1643536049156" data-timeout="704">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+   });
+}
+</script>
+<div id="ADP_40046_300x250_00000001-212edfaf-9d6f-4309-a977-e3f379205bcf" style="text-align: center; margin: 0 auto;" data-google-query-id="COb-xfSY2fUCFYbWdwoddT0P6A">
+
+<div id="google_ads_iframe_/103512698,60931893/21871305451_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/21871305451_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/21871305451_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="4" width="300" height="250" frameborder="0"></iframe></div></div></div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;min-height:250px!important">
+<div id="00000001-631a7720-e5f2-4991-8770-fdfaebd0b152" class="_ap_apex_ad" data-section="00000001-631a7720-e5f2-4991-8770-fdfaebd0b152" data-orig-id="5c0affd5-724a-475c-bfcd-cecbc7660c36" data-render-time="1643535693881" style="text-align: center; margin: 10px auto; width: 300px; height: 250px; overflow: hidden; display: block;" data-ap-network="adpTags" data-refresh-time="1643536049158" data-timeout="706">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("5c0affd5-724a-475c-bfcd-cecbc7660c36");
+   });
+}
+</script>
+<div id="ADP_40046_300x250_00000001-631a7720-e5f2-4991-8770-fdfaebd0b152" style="text-align: center; margin: 0 auto;" data-google-query-id="COf-xfSY2fUCFYbWdwoddT0P6A">
+
+<div id="google_ads_iframe_/103512698,60931893/21871305739_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/21871305739_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/21871305739_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="5" width="300" height="250" frameborder="0"></iframe></div></div></div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;margin-bottom:15px;min-height:600px!important">
+<div id="00000001-d461afd7-a066-49ef-9a6c-12e4bfb9e55a" class="_ap_apex_ad" data-section="00000001-d461afd7-a066-49ef-9a6c-12e4bfb9e55a" data-orig-id="8f8814c2-d64c-4d26-9cb9-543653c0b48f" data-render-time="1643535693885" style="text-align: center; margin: 10px auto; width: 300px; height: 600px; overflow: hidden; display: block;" data-ap-network="adpTags">
+<script>
+if( window.innerWidth > 768 ){
+   var adpushup = adpushup || {};
+   adpushup.que = adpushup.que || [];
+   adpushup.que.push(function() {
+   adpushup.triggerAd("8f8814c2-d64c-4d26-9cb9-543653c0b48f");
+   });
+}
+</script>
+<div id="ADP_40046_300x600_00000001-d461afd7-a066-49ef-9a6c-12e4bfb9e55a" style="text-align: center; margin: 0 auto;" data-google-query-id="CPb0kMyX2fUCFcPvdwodBpoHlA">
+
+<div id="google_ads_iframe_/103512698,60931893/21875371402_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/103512698,60931893/21875371402_0" title="3rd party ad content" name="google_ads_iframe_/103512698,60931893/21875371402_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" role="region" aria-label="Advertisement" tabindex="0" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" srcdoc="" data-google-container-id="6" data-load-complete="true" width="300" height="522" frameborder="0"></iframe></div></div></div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"><img class="img-responsive" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/return_refund_policy.htm"> <i class="fal fa-asterisk"></i> Refund Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">© Copyright 2021. All Rights Reserved.</div>
+</div>
+<div id="privacy-banner" style="display: inherit;">
+  <div>
+    <p>
+      We make use of cookies to improve our user experience. By using this website, you agree with our Cookies Policy.
+      <a id="banner-accept" href="javascript:void(0)">Agree</a>
+      <a id="banner-learn" href="https://www.tutorialspoint.com/about/about_cookies.htm" target="_blank">Learn more</a>
+    </p>
+  </div>
+</div>
+<script async="" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/js_002"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+<script src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/text_menu.js"></script>
+<script>
+$(document).ready(function (){
+    var cval = readCookie('subscription_purchased');
+    if(cval == '1'){
+          // logged in and purchased subscription.
+          $('#google-right-ads').remove();
+          $('#adp1').remove();
+          $('#adp2').remove();
+          $('#stickyparent').remove();
+          $('#google-top-ads').remove();
+          $('#adp_top_ads').remove();
+          $('#google-bottom-ads').remove();
+          $('.tutorial-content hr').remove();
+          $('.login').remove();
+          $('#chapter-menu').show();
+          $('.content h1').css("border-bottom", "none");
+          $('.google-right-ads').css("padding-right", "0px");
+          $('.tutorial-content').css("border-radius", "10px");
+          $('#chapter-menu .mui-panel').css("border-radius", "10px");
+     }
+     $(document).on("click", "#btnLogout", function(){
+       $.ajax({
+           type: 'GET',
+           dataType: 'JSON',
+           cache: false,
+           url: "https://www.tutorialspoint.com/market/logout.jsp",
+           complete: function (xhr, statusText) {
+               if(xhr.status == 200) {
+                   window.location.href = 'https://www.tutorialspoint.com/index.htm'
+               } else {
+                   console.log("something went wrong");
+               }
+           }
+       });
+    });
+});
+</script><iframe src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/container.html" style="visibility: hidden; display: none;"></iframe>
+</footer>
+
+
+<iframe src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/IL_.html" style="display: none; width: 0px; height: 0px;"></iframe><iframe style="display: none;" src="https://aax-eu.amazon-adsystem.com/s/iu3?cm3ppd=1&amp;d=dtb-pub&amp;csif=t&amp;dl=n-smaato_n-sharethrough_n-LoopMe_ym_rbd_dm_n-inmobi_n-amobee_sovrn_n-Outbrain"></iframe><iframe src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/aframe.html" style="display: none;" width="0" height="0"></iframe></body><iframe sandbox="allow-scripts allow-same-origin" id="12735dbc6d3691f7" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/async_usersync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="128ba4cad0f4f6418" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://sync.serverbid.com/ss/2000970.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1292b20068ebe75c" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eus.rubiconproject.com/usync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="130ebf30bba8091f" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/checksync.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="131f85e09c8a4aee8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://js-sec.indexww.com/um/ixmatch.html" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="1324001ed62170958" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="https://eu-u.openx.net/w/1.0/pd?plm=6&amp;ph=43a9730a-6c22-4066-b849-41c7558b6858&amp;gdpr=0" width="0" height="0" frameborder="0">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="13363531d1861b3d8" allowtransparency="true" marginheight="0" marginwidth="0" hspace="0" vspace="0" style="height:0px;width:0px;display:none;" scrolling="no" src="Swing%20Examples%20-%20Using%20JEditorPane%20to%20display%20an%20HTML%20page_files/sync.html" width="0" height="0" frameborder="0">
+    </iframe></html>

@@ -1,0 +1,59 @@
+			
+			
+			SELECT  r.vaccine_recipient_id ,r.vaccine_recipient_name
+			,r.vaccine_recipient_address,r.vaccine_recipient_date
+			, r.vaccine_recipient_id_number, r.vaccine_recipient_phone_num
+			, st.sextual_table_sexual
+			, v.vaccine_name
+			, vp.vaccine_pose_num , vp.vaccine_table_run_num
+			,v.vaccine_name
+			,hc.health_center_name
+
+			FROM vaccine_recipient r
+			JOIN sextual_table st on r.sextual_table_id = st.sextual_table_id
+			JOIN health_center hc on r.health_center_id = hc.health_center_id
+			JOIN vaccine_pose vp on r.vaccine_recipient_id = vp.vaccine_recipient_id
+
+			JOIN vaccine v on vp.vaccine_id = v.vaccine_id 
+
+
+
+
+
+
+
+
+emp
+
+
+SELECT et.emp_table_id
+,et.emp_name
+,et.emp_password
+,et.Employee_specialty
+,st.sextual_table_sexual
+,hc.health_center_name
+
+FROM emp_table et 
+JOIN sextual_table st on et.sexual_table_id = st.sextual_table_id
+
+JOIN wrok w on et.emp_table_id = w.emp_table_id
+JOIN health_center hc on hc.health_center_id = w.health_center_id
+order by emp_table_id
+
+
+
+sick---------------\
+SELECT vr.vaccine_recipient_id
+,vr.vaccine_recipient_name
+,dt.diseases_table_name
+FROM 
+vaccine_recipient_diseases vrd
+JOIN vaccine_recipient vr on vrd.vaccine_recipient_id = vr.vaccine_recipient_id
+JOIN diseases_table dt on vrd.diseases_table_id = dt.diseases_table_id
+ORDER BY vr.vaccine_recipient_id
+
+
+
+
+
+

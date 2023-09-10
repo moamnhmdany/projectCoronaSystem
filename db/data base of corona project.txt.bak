@@ -1,0 +1,276 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema db1
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema db1
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `db1` DEFAULT CHARACTER SET utf8 ;
+USE `db1` ;
+
+-- -----------------------------------------------------
+-- Table `db1`.`emp_table`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`emp_table` (
+  `emp_table_id` INT NOT NULL AUTO_INCREMENT,
+  `emp_name` VARCHAR(74) NOT NULL,
+  `emp_password` VARCHAR(75) NOT NULL,
+  `Employee_specialty` VARCHAR(75) NOT NULL,
+  `health_center_id`  INT NULL ,
+  PRIMARY KEY (`emp_table_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`sextual_table`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`sextual_table` (
+  `sextual_table_id` INT NOT NULL AUTO_INCREMENT ,
+  `sextual_table_sexual` VARCHAR(75) NOT NULL,
+  `pregnant_field` VARCHAR(45) NULL,
+  PRIMARY KEY (`sextual_table_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_recipient`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_recipient` (
+  `vaccine_recipient_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_recipient_name` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_address` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_date` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_id_number` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_phone_num` INT NULL,
+  `health_center_id` INT NOT NULL,
+  `sextual_table_id` INT NOT NULL,
+  PRIMARY KEY (`vaccine_recipient_id`),
+  INDEX `fk_vaccine_recipient_sextual_table1_idx` (`sextual_table_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_recipient_sextual_table1`
+    FOREIGN KEY (`sextual_table_id`)
+    REFERENCES `db1`.`sextual_table` (`sextual_table_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine` (
+  `vaccine_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_name` VARCHAR(75) NOT NULL,
+  `vaccine_expir_date` VARCHAR(75) NOT NULL,
+  `vaccine_country` VARCHAR(74) NOT NULL,
+  PRIMARY KEY (`vaccine_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_add`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_add` (
+  `vaccine_add` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_add_date_add` DATE NOT NULL,
+  `vaccine_add_amount` INT NOT NULL,
+  `vaccine_table_run_num` VARCHAR(45) NULL,
+  `emp_table_id` INT NOT NULL,
+  `vaccine_id` INT NOT NULL,
+  PRIMARY KEY (`vaccine_add`),
+  INDEX `fk_vaccine_add_emp_table1_idx` (`emp_table_id` ASC) VISIBLE,
+  INDEX `fk_vaccine_add_vaccine1_idx` (`vaccine_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_add_emp_table1`
+    FOREIGN KEY (`emp_table_id`)
+    REFERENCES `db1`.`emp_table` (`emp_table_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vaccine_add_vaccine1`
+    FOREIGN KEY (`vaccine_id`)
+    REFERENCES `db1`.`vaccine` (`vaccine_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`diseases_table`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`diseases_table` (
+  `diseases_table_id` INT NOT NULL AUTO_INCREMENT,
+  `diseases_table_name` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_diseases_id` INT NOT NULL,
+  PRIMARY KEY (`diseases_table_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_recipient_diseases`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_recipient_diseases` (
+  `vaccine_recipient_diseases_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_recipient_diseasesc_user_name` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_diseases_name` VARCHAR(75) NOT NULL,
+  `vaccine_recipient_info_id` INT NOT NULL,
+  `diseases_table_id` INT NOT NULL,
+  `vaccine_recipient_id` INT NOT NULL,
+  PRIMARY KEY (`vaccine_recipient_diseases_id`),
+  INDEX `fk_vaccine_recipient_diseases_diseases_table1_idx` (`diseases_table_id` ASC) VISIBLE,
+  INDEX `fk_vaccine_recipient_diseases_vaccine_recipient1_idx` (`vaccine_recipient_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_recipient_diseases_diseases_table1`
+    FOREIGN KEY (`diseases_table_id`)
+    REFERENCES `db1`.`diseases_table` (`diseases_table_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vaccine_recipient_diseases_vaccine_recipient1`
+    FOREIGN KEY (`vaccine_recipient_id`)
+    REFERENCES `db1`.`vaccine_recipient` (`vaccine_recipient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_complications`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_complications` (
+  `idvaccine_complications_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_complications_type` VARCHAR(75) NULL,
+  `vaccine_complications_date` DATE NULL,
+  `vaccine_num` INT NOT NULL,
+  `vaccine_recipient_id` INT NOT NULL,
+  `vaccine_id` INT NOT NULL,
+  PRIMARY KEY (`idvaccine_complications_id`),
+  INDEX `fk_vaccine_complications_vaccine_recipient1_idx` (`vaccine_recipient_id` ASC) VISIBLE,
+  INDEX `fk_vaccine_complications_vaccine1_idx` (`vaccine_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_complications_vaccine_recipient1`
+    FOREIGN KEY (`vaccine_recipient_id`)
+    REFERENCES `db1`.`vaccine_recipient` (`vaccine_recipient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vaccine_complications_vaccine1`
+    FOREIGN KEY (`vaccine_id`)
+    REFERENCES `db1`.`vaccine` (`vaccine_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`health_center`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`health_center` (
+  `health_center_id` INT NOT NULL AUTO_INCREMENT,
+  `health_center_name` VARCHAR(75) NOT NULL,
+  `health_center_num` INT NOT NULL,
+  `health_center_address` VARCHAR(75) NOT NULL,
+  PRIMARY KEY (`health_center_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`wrok`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`wrok` (
+  `work_id` INT NOT NULL AUTO_INCREMENT,
+  `wrok_date` INT NOT NULL,
+  `health_center_id` INT NOT NULL,
+  `emp_table_id` INT NOT NULL,
+  PRIMARY KEY (`work_id`),
+  INDEX `fk_wrok_emp_table1_idx` (`emp_table_id` ASC) VISIBLE,
+  INDEX `fk_wrok_health_center1_idx` (`health_center_id` ASC) VISIBLE,
+  CONSTRAINT `fk_wrok_emp_table1`
+    FOREIGN KEY (`emp_table_id`)
+    REFERENCES `db1`.`emp_table` (`emp_table_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_wrok_health_center1`
+    FOREIGN KEY (`health_center_id`)
+    REFERENCES `db1`.`health_center` (`health_center_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`record_pepole`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`record_pepole` (
+  `idrecord_pepole_id` INT NOT NULL AUTO_INCREMENT,
+  `record_pepole_date` DATE NOT NULL,
+  `record_pepole_type_vaccine` VARCHAR(75) NOT NULL,
+  `emp_table_id` INT NOT NULL,
+  `vaccine_recipient_id` INT NOT NULL,
+  PRIMARY KEY (`idrecord_pepole_id`),
+  INDEX `fk_record_pepole_emp_table1_idx` (`emp_table_id` ASC) VISIBLE,
+  INDEX `fk_record_pepole_vaccine_recipient1_idx` (`vaccine_recipient_id` ASC) VISIBLE,
+  CONSTRAINT `fk_record_pepole_emp_table1`
+    FOREIGN KEY (`emp_table_id`)
+    REFERENCES `db1`.`emp_table` (`emp_table_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_record_pepole_vaccine_recipient1`
+    FOREIGN KEY (`vaccine_recipient_id`)
+    REFERENCES `db1`.`vaccine_recipient` (`vaccine_recipient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_pose`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_pose` (
+  `vaccine_pose_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_pose_num` INT NOT NULL,
+  `vaccine_pose_date` INT NULL,
+  `vaccine_table_run_num` VARCHAR(45) NOT NULL,
+  `vaccine_recipient_id` INT NULL,
+  `vaccine_id` INT NOT NULL,
+  PRIMARY KEY (`vaccine_pose_id`),
+  INDEX `fk_vaccine_pose_vaccine_recipient1_idx` (`vaccine_recipient_id` ASC) VISIBLE,
+  INDEX `fk_vaccine_pose_vaccine1_idx` (`vaccine_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_pose_vaccine_recipient1`
+    FOREIGN KEY (`vaccine_recipient_id`)
+    REFERENCES `db1`.`vaccine_recipient` (`vaccine_recipient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vaccine_pose_vaccine1`
+    FOREIGN KEY (`vaccine_id`)
+    REFERENCES `db1`.`vaccine` (`vaccine_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `db1`.`vaccine_taken_palce`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `db1`.`vaccine_taken_palce` (
+  `vaccine_taken_palce_id` INT NOT NULL AUTO_INCREMENT,
+  `vaccine_recipient_id` INT NOT NULL,
+  `health_center_id` INT NULL,
+  PRIMARY KEY (`vaccine_taken_palce_id`),
+  INDEX `fk_vaccine_taken_palce_health_center1_idx` (`health_center_id` ASC) VISIBLE,
+  INDEX `fk_vaccine_taken_palce_vaccine_recipient1_idx` (`vaccine_recipient_id` ASC) VISIBLE,
+  CONSTRAINT `fk_vaccine_taken_palce_health_center1`
+    FOREIGN KEY (`health_center_id`)
+    REFERENCES `db1`.`health_center` (`health_center_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_vaccine_taken_palce_vaccine_recipient1`
+    FOREIGN KEY (`vaccine_recipient_id`)
+    REFERENCES `db1`.`vaccine_recipient` (`vaccine_recipient_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
